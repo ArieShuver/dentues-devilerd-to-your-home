@@ -557,6 +557,19 @@ html[dir="ltr"] .whatsapp-float {
     transition: 0.3s;
 }
 
+.form-success {
+    display: none;
+    grid-column: span 2;
+    background: var(--navy);
+    color: var(--gold);
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
 /* Responsive */
 @media (max-width: 991px) {
     body { padding-top: 60px; }
@@ -628,7 +641,7 @@ html[dir="ltr"] .whatsapp-float {
         grid-template-columns: 1fr;
         padding: 20px;
     }
-    .form-container textarea { grid-column: span 1 !important; }
+        .form-container textarea { grid-column: span 1 !important; }
     .steps-container {
         flex-direction: column;
         gap: 40px;
@@ -640,7 +653,7 @@ html[dir="ltr"] .whatsapp-float {
     }
     .testimonial-card { padding: 20px; }
     .features-container { grid-template-columns: 1fr; }
-    .form-submit { grid-column: span 1; }
+        .form-submit { grid-column: span 1; }
     .features-container { grid-template-columns: repeat(2, 1fr); }
     .whatsapp-float,
     .accessibility-btn {
