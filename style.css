@@ -37,16 +37,9 @@ html[dir="ltr"] .brand-phone {
 html[dir="ltr"] .hero {
     padding-right: 0;
     padding-left: 10%;
-    grid-template-columns: 1.25fr 0.75fr;
 }
 html[dir="ltr"] .hero::before {
     background: linear-gradient(to left, rgba(10, 21, 38, 0) 0%, rgba(10, 21, 38, 0) 20%, rgba(10, 21, 38, 0.8) 50%, rgba(10, 21, 38, 0.98) 100%);
-}
-html[dir="ltr"] .hero-content {
-    grid-column: 2;
-}
-html[dir="ltr"] .hero-media {
-    grid-column: 1;
 }
 html[dir="ltr"] .section,
 html[dir="ltr"] .specialist-intro,
@@ -601,6 +594,10 @@ html[dir="ltr"] .whatsapp-float {
         min-height: auto;
         display: flex;
         flex-direction: column-reverse;
+    }
+    .hero::before,
+    html[dir="ltr"] .hero::before {
+        display: none;
     }
     .hero-content { padding: 40px 0; }
     .hero h1 { font-size: 2.4rem; }
