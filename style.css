@@ -42,7 +42,8 @@ html[dir="ltr"] .hero::before {
     background: linear-gradient(to left, rgba(10, 21, 38, 0) 0%, rgba(10, 21, 38, 0) 20%, rgba(10, 21, 38, 0.8) 50%, rgba(10, 21, 38, 0.98) 100%);
 }
 html[dir="ltr"] .faq-container,
-html[dir="ltr"] .testimonial-card {
+html[dir="ltr"] .testimonial-card,
+html[dir="ltr"] .specialist-intro {
     text-align: left;
 }
 html[dir="ltr"] .specialist-step p {
@@ -627,6 +628,9 @@ html[dir="ltr"] .whatsapp-float {
     }
     .specialist-image {
         align-self: center;
+    }
+    .specialist-text h2 {
+        text-align: center;
     }
     .specialist-image img {
         width: 220px;
