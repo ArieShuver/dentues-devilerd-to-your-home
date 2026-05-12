@@ -41,8 +41,6 @@ html[dir="ltr"] .hero {
 html[dir="ltr"] .hero::before {
     background: linear-gradient(to left, rgba(10, 21, 38, 0) 0%, rgba(10, 21, 38, 0) 20%, rgba(10, 21, 38, 0.8) 50%, rgba(10, 21, 38, 0.98) 100%);
 }
-html[dir="ltr"] .section,
-html[dir="ltr"] .specialist-intro,
 html[dir="ltr"] .faq-container,
 html[dir="ltr"] .testimonial-card {
     text-align: left;
@@ -95,6 +93,9 @@ html[dir="ltr"] .whatsapp-float {
         border-left: none;
         padding-left: 0;
         margin-left: 0;
+    }
+    html[dir="ltr"] .specialist-step p {
+        padding-left: 0;
     }
 }
 
@@ -622,19 +623,27 @@ html[dir="ltr"] .whatsapp-float {
     }
     .specialist-container {
         flex-direction: column;
-        text-align: center;
         gap: 30px;
+    }
+    .specialist-image {
+        align-self: center;
     }
     .specialist-image img {
         width: 220px;
         height: 220px;
+    }
+    .specialist-step h3 {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .specialist-step p {
+        padding-right: 0;
     }
     .method-highlight {
         border-right: none;
         border-top: 5px solid var(--gold);
         border-radius: 0 0 12px 12px !important;
         padding: 20px !important;
-        text-align: center;
         margin-top: 20px;
     }
     .form-container {
@@ -816,7 +825,7 @@ body.readable-font {
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 50px;
 }
 
@@ -829,6 +838,7 @@ body.readable-font {
     object-fit: cover;
     border: 5px solid var(--gold);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    margin-top: 10px;
 }
 
 .specialist-text { flex: 1; }
@@ -990,4 +1000,14 @@ body.readable-font {
 .faq-item.active .faq-answer {
     max-height: 500px;
     padding-bottom: 20px;
+}
+
+/* Mobile overrides for elements defined at the bottom */
+@media (max-width: 991px) {
+    .specialist-step h3 {
+        flex-direction: column;
+    }
+    .specialist-step p {
+        padding-right: 0;
+    }
 }

@@ -361,10 +361,11 @@
             <div class="form-container" id="contactForm">
                 <input type="text" id="formName" placeholder="שם מלא" required>
                 <input type="tel" id="formPhone" placeholder="מספר טלפון" required dir="rtl" style="text-align: right;">
-                <input type="text" id="formCity" placeholder="עיר / יישוב">
+                <input type="text" id="formCity" placeholder="עיר / יישוב" required>
                 <input type="email" id="formEmail" placeholder="כתובת אימייל (אופציונלי)">
-                <textarea id="formMessage" placeholder="איך נוכל לעזור לך?"
+                <textarea id="formMessage" placeholder="איך נוכל לעזור לך?" required
                     style="grid-column: 1 / -1; padding: 15px; border: none; border-radius: 5px; font-family: inherit; font-size: 1.1rem; min-height: 100px; box-sizing: border-box; width: 100%;"></textarea>
+                <div id="formError" style="display: none; grid-column: 1 / -1; color: #ff4d4d; font-weight: bold; margin-bottom: 5px;"></div>
                 <button class="form-submit" onclick="submitForm()">שלח הודעה לייעוץ חינם</button>
                 <div id="formSuccess"
                     style="display: none; grid-column: 1 / -1; background: #0a192f; color: #d4af37; padding: 15px; border-radius: 5px; font-weight: bold; margin-top: 10px; box-sizing: border-box; width: 100%;">
@@ -501,39 +502,90 @@
             });
 
             // Form Submission Logic
-            function submitForm() {
-                const name = document.getElementById('formName').value;
-                const phone = document.getElementById('formPhone').value;
-                const city = document.getElementById('formCity').value;
-                const email = document.getElementById('formEmail').value;
-                const message = document.getElementById('formMessage').value;
+            async function submitForm() {
+                const errorMsg = document.getElementById('formError');
+                errorMsg.style.display = 'none';
 
-                if (!name || !phone) {
-                    alert('אנא מלא שם ומספר טלפון כדי שנוכל לחזור אליך.');
+                const showError = (msg) => {
+                    errorMsg.innerText = msg;
+                    errorMsg.style.display = 'block';
+                };
+
+                const name = document.getElementById('formName').value.trim();
+                const phone = document.getElementById('formPhone').value.trim();
+                const city = document.getElementById('formCity').value.trim();
+                const email = document.getElementById('formEmail').value.trim();
+                const message = document.getElementById('formMessage').value.trim();
+
+                if (!name) {
+                    showError('אנא הזן שם מלא.');
+                    return;
+                }
+                if (!phone || !/^[0-9\-+]{9,15}$/.test(phone)) {
+                    showError('אנא הזן מספר טלפון תקין.');
+                    return;
+                }
+                if (!city) {
+                    showError('אנא הזן עיר / יישוב.');
+                    return;
+                }
+                if (!message) {
+                    showError('אנא הזן הודעה.');
                     return;
                 }
 
-                // יצירת תוכן ההודעה לוואטסאפ
-                let waText = `שלום, אשמח לפרטים נוספים. הגעתי דרך האתר:\n`;
-                waText += `שם: ${name}\n`;
-                waText += `טלפון: ${phone}\n`;
-                if (city) waText += `עיר: ${city}\n`;
-                if (email) waText += `אימייל: ${email}\n`;
-                if (message) waText += `הודעה: ${message}\n`;
-
-                // קידוד הטקסט לפורמט של קישור
-                const encodedText = encodeURIComponent(waText);
-                const waUrl = `https://wa.me/972507156888?text=${encodedText}`;
-
-                // פתיחת וואטסאפ בחלון חדש
-                window.open(waUrl, '_blank');
-
-                // הצגת הודעת הצלחה באתר
+                // שינוי מצב הכפתור לטעינה
                 const btn = document.querySelector('.form-submit');
-                const successMsg = document.getElementById('formSuccess');
+                const originalBtnText = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> שולח...';
+                btn.disabled = true;
+                btn.style.opacity = '0.7';
+                btn.style.cursor = 'not-allowed';
 
-                btn.style.display = 'none';
-                successMsg.style.display = 'block';
+                const formData = {
+                    accessKey: 'sf_fcdeb886961649a80aaa1b2a', // יש להחליף במפתח מ-StaticForms
+                    subject: 'פנייה חדשה מהאתר - תותבות עד הבית',
+                    name: name,
+                    phone: phone,
+                    city: city,
+                    email: email,
+                    message: message
+                };
+
+                try {
+                    const response = await fetch('https://api.staticforms.xyz/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        const successMsg = document.getElementById('formSuccess');
+                        btn.style.display = 'none';
+                        successMsg.style.display = 'block';
+                        
+                        // איפוס שדות הטופס
+                        document.getElementById('formName').value = '';
+                        document.getElementById('formPhone').value = '';
+                        document.getElementById('formCity').value = '';
+                        document.getElementById('formEmail').value = '';
+                        document.getElementById('formMessage').value = '';
+                    } else {
+                        showError('אירעה שגיאה בשליחת ההודעה. אנא נסה שוב.');
+                    }
+                } catch (error) {
+                    showError('שגיאת רשת. אנא בדוק את החיבור לאינטרנט ונסה שוב.');
+                } finally {
+                    // החזרת הכפתור למצבו הרגיל במקרה של סיום התהליך
+                    btn.innerHTML = originalBtnText;
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    btn.style.cursor = 'pointer';
+                }
             }
 
             // Initialize slider on load
