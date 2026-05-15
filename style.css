@@ -98,6 +98,7 @@ html[dir="ltr"] .whatsapp-float {
     html[dir="ltr"] .specialist-step p {
         padding-left: 0;
     }
+        html[dir="ltr"] .hero-bullets { text-align: left; margin: 0 0 30px 15%; }
 }
 
 /* Top Navigation */
@@ -262,6 +263,27 @@ html[dir="ltr"] .whatsapp-float {
     margin-bottom: 45px;
     max-width: 650px;
     opacity: 0.95;
+}
+
+.hero-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 35px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 25px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    width: fit-content;
+}
+.hero-bullets li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.hero-bullets i {
+    color: var(--gold);
+    font-size: 1.1rem;
 }
 
 .cta-button {
@@ -572,9 +594,75 @@ html[dir="ltr"] .whatsapp-float {
     width: 100%;
 }
 
+/* Quick Contact Strip (Below Hero) */
+.quick-contact-strip {
+    background-color: var(--gray-bg); /* רקע אפור בהיר ונעים */
+    padding: 50px 10%;
+    position: relative;
+    z-index: 10;
+}
+
+/* Hero Form (Top Form) */
+.hero-form-container {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 12px;
+    margin: 0 auto;
+    max-width: 1000px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* הצללה יוקרתית שנותנת תחושת ריחוף */
+    transform: translateY(40px); /* מצב התחלתי לפני הגלילה - נמוך יותר */
+    opacity: 0; /* מצב התחלתי - שקוף */
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); /* הגדרת האנימציה */
+}
+.hero-form-container.visible {
+    transform: translateY(0); /* קופץ למקום המקורי */
+    opacity: 1; /* מופיע במלואו */
+}
+.hero-form-container h3 {
+    margin-top: 0;
+    color: var(--navy); /* כחול כהה במקום זהב כדי שיבלוט על הלבן */
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+.hero-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 עמודות בשורה במסך גדול */
+    gap: 15px;
+}
+.hero-form-grid input,
+.hero-form-grid select {
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    font-family: inherit;
+    font-size: 1.05rem;
+    color: var(--navy);
+}
+.hero-form-submit {
+    grid-column: span 2;
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 14px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.hero-form-submit:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+}
+
 /* Responsive */
 @media (max-width: 991px) {
     body { padding-top: 60px; }
+    .quick-contact-strip { padding: 40px 5%; }
     .section { padding: 50px 5%; }
     .top-nav-inner {
         padding: 10px 5%;
@@ -629,12 +717,9 @@ html[dir="ltr"] .whatsapp-float {
     .specialist-image {
         align-self: center;
     }
-    .specialist-text h2 {
-        text-align: center;
-    }
     .specialist-image img {
-        width: 220px;
-        height: 220px;
+        width: 160px;
+        height: 160px;
     }
     .specialist-step h3 {
         flex-direction: column;
@@ -654,6 +739,8 @@ html[dir="ltr"] .whatsapp-float {
         grid-template-columns: 1fr;
         padding: 20px;
     }
+    .hero-form-grid { grid-template-columns: 1fr; }
+    .hero-form-submit { grid-column: span 1; }
         .form-container textarea { grid-column: span 1 !important; }
     .steps-container {
         flex-direction: column;
@@ -689,7 +776,8 @@ html[dir="ltr"] .whatsapp-float {
         font-size: 2rem;
         line-height: 1.2;
     }
-    .hero p { font-size: 1.2rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 25px; }
+    .hero-bullets { margin: 0 15% 30px 0; grid-template-columns: 1fr; text-align: right; gap: 10px; font-size: 1.15rem; }
     .lang-switcher {
         justify-content: center;
         margin-top: 10px;
@@ -855,6 +943,7 @@ body.readable-font {
     margin-top: 0;
     margin-bottom: 20px;
     line-height: 1.2;
+    text-align: center;
 }
 
 .specialist-text > p {

@@ -64,6 +64,16 @@
     }
     </script>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16695210635"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-16695210635');
+    </script>
+
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -104,13 +114,14 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <h1>A Perfect Smile with At-Home Dentures</h1>
-                <h2>Maximum Comfort. In Your Home.</h2>
-                <p><strong>At-home dentist for denture rehabilitation.</strong><br>
-                    Our clinic ensures a fast, efficient, and precise process, thanks to our collaboration with an adjacent dental lab. <br>
-                    The advantage: precise adjustments, quick repairs, and an exceptionally high-level aesthetic and health outcome.
-                    - Our expertise, your comfort.
-                </p>
+                <h1>Expert Dentures & Oral Rehabilitation – At Home</h1>
+                <h2>Dr. Schuber's expertise, right in your living room.</h2>
+                <ul class="hero-bullets">
+                    <li><i class="fa-solid fa-check"></i> At-Home Visit</li>
+                    <li><i class="fa-solid fa-check"></i> Custom Fit</li>
+                    <li><i class="fa-solid fa-check"></i> Fast Solutions</li>
+                    <li><i class="fa-solid fa-check"></i> Personal Care</li>
+                </ul>
                 <div class="hero-phone">
                     For an initial, no-cost consultation:
                     <br>
@@ -122,11 +133,33 @@
             <div class="hero-media"></div>
         </section>
 
+        <!-- Quick Form Section - Under Header -->
+        <section class="quick-contact-strip">
+            <div class="hero-form-container">
+                <h3 style="text-align: center;">Initial Consultation & Eligibility Check – Free and No Obligation!</h3>
+                <div class="hero-form-grid">
+                    <input type="text" id="heroFormName" placeholder="Full Name" required>
+                    <input type="tel" id="heroFormPhone" placeholder="Phone Number" required style="text-align: left;">
+                    <input type="text" id="heroFormCity" placeholder="City / Area" required>
+                    <select id="heroFormService" required>
+                        <option value="" disabled selected>Required Service?</option>
+                        <option value="New Dentures">New Dentures</option>
+                        <option value="Repair / Reline">Repair or Reline Existing Dentures</option>
+                        <option value="General / Other">General Dental / Other</option>
+                    </select>
+                    <button class="hero-form-submit" onclick="submitHeroForm()">Call Me for a Free Consult</button>
+                </div>
+                <p style="text-align: center; font-size: 0.95rem; color: #666; margin-top: 18px;"><i class="fa-solid fa-shield-halved" style="color: var(--gold);"></i> Your details are secure. We guarantee full discretion and personal medical service.</p>
+                <div id="heroFormError" style="display: none; color: #d32f2f; font-weight: bold; margin-top: 10px; font-size: 1rem; text-align: center;"></div>
+                <div id="heroFormSuccess" style="display: none; color: #2e7d32; font-weight: bold; margin-top: 10px; font-size: 1.1rem; text-align: center;">Thank you! Your message has been sent successfully.</div>
+            </div>
+        </section>
+
         <!-- About Specialist Section -->
         <section id="specialist-intro" class="specialist-intro">
             <div class="specialist-container">
                 <div class="specialist-image">
-                    <img src="../d.r.png" alt="Dr. Z. Schuber - Prosthodontist and Denture Specialist">
+                    <img src="../d.r.png" alt="Dr. Z. Schuber - Prosthodontist and Denture Specialist" loading="lazy">
                 </div>
                 <div class="specialist-text">
                     <h2>Uncompromising Expertise – Dr. Z. Schuber, A Different Level of Professionalism.</h2>
@@ -355,6 +388,12 @@
                 <input type="tel" id="formPhone" placeholder="Phone Number" required>
                 <input type="text" id="formCity" placeholder="City / Town" required>
                 <input type="email" id="formEmail" placeholder="Email Address (optional)">
+                <select id="formService" required style="grid-column: 1 / -1; padding: 15px; border: none; border-radius: 5px; font-family: inherit; font-size: 1.1rem; box-sizing: border-box; width: 100%;">
+                    <option value="" disabled selected>Which service are you interested in?</option>
+                    <option value="New Dentures">New Dentures</option>
+                    <option value="Repair / Reline">Repair or Reline Existing Dentures</option>
+                    <option value="General / Other">General Dental / Other</option>
+                </select>
                 <textarea id="formMessage" placeholder="How can we help you?" required
                     style="grid-column: 1 / -1; padding: 15px; border: none; border-radius: 5px; font-family: inherit; font-size: 1.1rem; min-height: 100px; box-sizing: border-box; width: 100%;"></textarea>
                 <div id="formError" style="display: none; grid-column: 1 / -1; color: #ff4d4d; font-weight: bold; margin-bottom: 5px;"></div>
@@ -485,6 +524,17 @@
                 }
             });
 
+            // Scroll Animation Logic
+            const observerOptions = { threshold: 0.15 };
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.hero-form-container').forEach(el => scrollObserver.observe(el));
+
             // FAQ Accordion Logic
             document.querySelectorAll('.faq-question').forEach(question => {
                 question.addEventListener('click', () => {
@@ -492,6 +542,83 @@
                     item.classList.toggle('active');
                 });
             });
+
+            // Hero Form Submission Logic
+            async function submitHeroForm() {
+                const errorMsg = document.getElementById('heroFormError');
+                errorMsg.style.display = 'none';
+
+                const showError = (msg) => {
+                    errorMsg.innerText = msg;
+                    errorMsg.style.display = 'block';
+                };
+
+                const name = document.getElementById('heroFormName').value.trim();
+                const phone = document.getElementById('heroFormPhone').value.trim();
+                const city = document.getElementById('heroFormCity').value.trim();
+                const service = document.getElementById('heroFormService').value;
+
+                if (!name) {
+                    showError('Please enter your full name.');
+                    return;
+                }
+                if (!phone || !/^[0-9\-+]{9,15}$/.test(phone)) {
+                    showError('Please enter a valid phone number.');
+                    return;
+                }
+                if (!city) {
+                    showError('Please enter your city/town.');
+                    return;
+                }
+                if (!service) {
+                    showError('Please select a service.');
+                    return;
+                }
+
+                const btn = document.querySelector('.hero-form-submit');
+                const originalBtnText = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+                btn.disabled = true;
+                btn.style.opacity = '0.7';
+                btn.style.cursor = 'not-allowed';
+
+                const formData = {
+                    accessKey: 'sf_fcdeb886961649a80aaa1b2a',
+                    subject: 'New quick contact from website top (English)',
+                    name: name,
+                    phone: phone,
+                    message: `Quick contact from the top hero form\n--------------------\nCity: ${city}\nService: ${service}`
+                };
+
+                try {
+                    const response = await fetch('https://api.staticforms.xyz/submit', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+                    const data = await response.json();
+                    if (data.success) {
+                        const successMsg = document.getElementById('heroFormSuccess');
+                        btn.style.display = 'none';
+                        successMsg.style.display = 'block';
+                        document.getElementById('heroFormName').value = '';
+                        document.getElementById('heroFormPhone').value = '';
+                        document.getElementById('heroFormCity').value = '';
+                        document.getElementById('heroFormService').value = '';
+                    } else {
+                        showError('There was a problem sending your message. Please try again.');
+                    }
+                } catch (error) {
+                    showError('Network error. Please check your connection and try again.');
+                } finally {
+                    if (btn.style.display !== 'none') {
+                        btn.innerHTML = originalBtnText;
+                        btn.disabled = false;
+                        btn.style.opacity = '1';
+                        btn.style.cursor = 'pointer';
+                    }
+                }
+            }
 
             // Form Submission Logic
             async function submitForm() {
@@ -507,6 +634,7 @@
                 const phone = document.getElementById('formPhone').value.trim();
                 const city = document.getElementById('formCity').value.trim();
                 const email = document.getElementById('formEmail').value.trim();
+                const service = document.getElementById('formService').value;
                 const message = document.getElementById('formMessage').value.trim();
 
                 if (!name) {
@@ -519,6 +647,10 @@
                 }
                 if (!city) {
                     showError('Please enter your city/town.');
+                    return;
+                }
+                if (!service) {
+                    showError('Please select a service.');
                     return;
                 }
                 if (!message) {
@@ -539,9 +671,8 @@
                     subject: 'New contact from website (English)',
                     name: name,
                     phone: phone,
-                    city: city,
-                    email: email,
-                    message: message
+                    replyTo: email ? email : undefined,
+                    message: `City: ${city}\nEmail: ${email || 'Not provided'}\nService requested: ${service}\n--------------------\nMessage from client:\n${message}`
                 };
 
                 try {
@@ -565,6 +696,7 @@
                         document.getElementById('formPhone').value = '';
                         document.getElementById('formCity').value = '';
                         document.getElementById('formEmail').value = '';
+                        document.getElementById('formService').value = '';
                         document.getElementById('formMessage').value = '';
                     } else {
                         showError('There was a problem sending your message. Please try again.');

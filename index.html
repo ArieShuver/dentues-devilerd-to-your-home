@@ -8,10 +8,15 @@
     <meta name="description"
         content="ד&quot;ר צ. שובר, רופא שיניים מומחה לשיקום הפה, מציע שיניים תותבות בהתאמה אישית עד הבית. שיפור מיידי בלעיסה, בדיבור ובמראה הפנים. חייגו עכשיו לייעוץ: 050-7156-888.">
     <meta name="keywords"
-        content="שיניים תותבות, רופא שיניים עד הבית, ד&quot;ר שובר, שיקום הפה, תותבות עד הבית, ספיגת עצם בלסת, גובה הפנים, שיניים תותבות יוקרתיות">
+        content="שיניים תותבות, רופא שיניים עד הבית,ד &quot;ר שובר, שיקום הפה, תותבות עד הבית, ספיגת עצם בלסת, גובה הפנים, שיניים תותבות יוקרתיותד">
     <link rel="canonical" href="https://www.Totavotadhabayit.com/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%2280%22 x=%2250%22 text-anchor=%22middle%22 font-size=%2290%22 font-family=%22serif%22 font-weight=%22bold%22 fill=%22%23d4af37%22>T</text></svg>">
+    
+    <!-- אייקון למנוע החיפוש של גוגל ולסמארטפונים (קובץ התמונה) -->
+    <link rel="icon" href="favicon.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <!-- אייקון ללשונית הדפדפן - יורנדר בצורה חדה (קוד ה-SVG המקורי) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%2280%22 x=%2250%22 text-anchor=%22middle%22 font-size=%2290%22 font-family=%22serif%22 font-weight=%22bold%22 fill=%22%23d4af37%22>T</text></svg>" type="image/svg+xml">
 
     <!-- JSON-LD Structured Data for SEO -->
     <script type="application/ld+json">
@@ -64,6 +69,16 @@
     }
     </script>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16695210635"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-16695210635');
+    </script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -104,13 +119,14 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <h1>חיוך מושלם עם תותבות עד הבית</h1>
-                <h2>נוחות מקסימלית. אצלכם בבית.</h2>
-                <p><strong>רופא שיניים עד הבית – לשיקום תותבות.</strong><br>
-                    במרפאתנו תיהנו מתהליך מהיר, יעיל ומדויק — בזכות שיתוף פעולה עם מעבדת שיניים צמודה. <br>
-                    היתרון: התאמות מדויקות, תיקונים מהירים ותוצאה אסתטית ובריאותית ברמה גבוהה במיוחד.
-                    - המומחיות שלנו, הנוחות שלכם.
-                </p>
+                <h1>שיניים תותבות ושיקום הפה – עד הבית</h1>
+                <h2>המומחיות של ד"ר שובר, בנוחות של הסלון שלכם.</h2>
+                <ul class="hero-bullets">
+                    <li><i class="fa-solid fa-check"></i> הגעה עד הבית</li>
+                    <li><i class="fa-solid fa-check"></i> התאמה אישית</li>
+                    <li><i class="fa-solid fa-check"></i> פתרונות מהירים</li>
+                    <li><i class="fa-solid fa-check"></i> יחס אישי</li>
+                </ul>
                 <div class="hero-phone">
                     לשיחת ייעוץ ראשונית ללא עלות:
                     <br>
@@ -122,11 +138,33 @@
             <div class="hero-media"></div>
         </section>
 
+        <!-- טופס מהיר - פס מתחת להאדר -->
+        <section class="quick-contact-strip">
+            <div class="hero-form-container">
+                <h3 style="text-align: center;">שיחת ייעוץ ראשונית ובדיקת התאמה – ללא עלות וללא התחייבות!</h3>
+                <div class="hero-form-grid">
+                    <input type="text" id="heroFormName" placeholder="שם מלא" required>
+                    <input type="tel" id="heroFormPhone" placeholder="מספר טלפון" required dir="rtl" style="text-align: right;">
+                    <input type="text" id="heroFormCity" placeholder="עיר מגורים / אזור" required>
+                    <select id="heroFormService" required>
+                        <option value="" disabled selected>סוג הטיפול הנדרש?</option>
+                        <option value="תותבות חדשות">תותבות חדשות</option>
+                        <option value="תיקון/ריפוד תותבת קיימת">תיקון או ריפוד תותבת</option>
+                        <option value="טיפול שיניים כללי/אחר">טיפול שיניים כללי / אחר</option>
+                    </select>
+                    <button class="hero-form-submit" onclick="submitHeroForm()">חזרו אליי לייעוץ חינם</button>
+                </div>
+                <p style="text-align: center; font-size: 0.95rem; color: #666; margin-top: 18px;"><i class="fa-solid fa-shield-halved" style="color: var(--gold);"></i> הפרטים שלך מאובטחים. אנו מתחייבים לדיסקרטיות מלאה ולשירות רפואי אישי.</p>
+                <div id="heroFormError" style="display: none; color: #d32f2f; font-weight: bold; margin-top: 10px; font-size: 1rem; text-align: center;"></div>
+                <div id="heroFormSuccess" style="display: none; color: #2e7d32; font-weight: bold; margin-top: 10px; font-size: 1.1rem; text-align: center;">תודה! פנייתך נשלחה בהצלחה.</div>
+            </div>
+        </section>
+
         <!-- About Specialist Section -->
         <section id="specialist-intro" class="specialist-intro">
             <div class="specialist-container">
                 <div class="specialist-image">
-                    <img src="d.r.png" alt="ד&quot;ר צ. שובר - רופא שיניים מומחה לשיקום הפה ושיניים תותבות">
+                    <img src="d.r.png" alt="ד&quot;ר צ. שובר - רופא שיניים מומחה לשיקום הפה ושיניים תותבות" loading="lazy">
                 </div>
                 <div class="specialist-text">
                     <h2>מומחיות ללא פשרות, ד"ר צ. שובר, רמה אחרת של מקצועיות.</h2>
@@ -363,6 +401,12 @@
                 <input type="tel" id="formPhone" placeholder="מספר טלפון" required dir="rtl" style="text-align: right;">
                 <input type="text" id="formCity" placeholder="עיר / יישוב" required>
                 <input type="email" id="formEmail" placeholder="כתובת אימייל (אופציונלי)">
+                <select id="formService" required style="grid-column: 1 / -1; padding: 15px; border: none; border-radius: 5px; font-family: inherit; font-size: 1.1rem; box-sizing: border-box; width: 100%;">
+                    <option value="" disabled selected>איזה שירות מעניין אותך?</option>
+                    <option value="תותבות חדשות">תותבות חדשות</option>
+                    <option value="תיקון/ריפוד תותבת">תיקון או ריפוד תותבת קיימת</option>
+                    <option value="טיפול שיניים כללי/אחר">טיפול שיניים כללי / אחר</option>
+                </select>
                 <textarea id="formMessage" placeholder="איך נוכל לעזור לך?" required
                     style="grid-column: 1 / -1; padding: 15px; border: none; border-radius: 5px; font-family: inherit; font-size: 1.1rem; min-height: 100px; box-sizing: border-box; width: 100%;"></textarea>
                 <div id="formError" style="display: none; grid-column: 1 / -1; color: #ff4d4d; font-weight: bold; margin-bottom: 5px;"></div>
@@ -493,6 +537,17 @@
                 }
             });
 
+            // Scroll Animation Logic
+            const observerOptions = { threshold: 0.15 };
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.hero-form-container').forEach(el => scrollObserver.observe(el));
+
             // FAQ Accordion Logic
             document.querySelectorAll('.faq-question').forEach(question => {
                 question.addEventListener('click', () => {
@@ -500,6 +555,83 @@
                     item.classList.toggle('active');
                 });
             });
+
+            // Hero Form Submission Logic
+            async function submitHeroForm() {
+                const errorMsg = document.getElementById('heroFormError');
+                errorMsg.style.display = 'none';
+
+                const showError = (msg) => {
+                    errorMsg.innerText = msg;
+                    errorMsg.style.display = 'block';
+                };
+
+                const name = document.getElementById('heroFormName').value.trim();
+                const phone = document.getElementById('heroFormPhone').value.trim();
+                const city = document.getElementById('heroFormCity').value.trim();
+                const service = document.getElementById('heroFormService').value;
+
+                if (!name) {
+                    showError('אנא הזן שם מלא.');
+                    return;
+                }
+                if (!phone || !/^[0-9\-+]{9,15}$/.test(phone)) {
+                    showError('אנא הזן מספר טלפון תקין.');
+                    return;
+                }
+                if (!city) {
+                    showError('אנא הזן עיר מגורים.');
+                    return;
+                }
+                if (!service) {
+                    showError('אנא בחר את סוג הטיפול.');
+                    return;
+                }
+
+                const btn = document.querySelector('.hero-form-submit');
+                const originalBtnText = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> שולח...';
+                btn.disabled = true;
+                btn.style.opacity = '0.7';
+                btn.style.cursor = 'not-allowed';
+
+                const formData = {
+                    accessKey: 'sf_fcdeb886961649a80aaa1b2a',
+                    subject: 'פנייה חדשה ומהירה מההתחלה - תותבות עד הבית',
+                    name: name,
+                    phone: phone,
+                    message: `פנייה מהירה מהטופס העליון באתר\n--------------------\nעיר: ${city}\nסוג שירות: ${service}`
+                };
+
+                try {
+                    const response = await fetch('https://api.staticforms.xyz/submit', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+                    const data = await response.json();
+                    if (data.success) {
+                        const successMsg = document.getElementById('heroFormSuccess');
+                        btn.style.display = 'none';
+                        successMsg.style.display = 'block';
+                        document.getElementById('heroFormName').value = '';
+                        document.getElementById('heroFormPhone').value = '';
+                        document.getElementById('heroFormCity').value = '';
+                        document.getElementById('heroFormService').value = '';
+                    } else {
+                        showError('אירעה שגיאה בשליחת ההודעה. אנא נסה שוב.');
+                    }
+                } catch (error) {
+                    showError('שגיאת רשת. אנא בדוק את החיבור לאינטרנט ונסה שוב.');
+                } finally {
+                    if (btn.style.display !== 'none') {
+                        btn.innerHTML = originalBtnText;
+                        btn.disabled = false;
+                        btn.style.opacity = '1';
+                        btn.style.cursor = 'pointer';
+                    }
+                }
+            }
 
             // Form Submission Logic
             async function submitForm() {
@@ -515,6 +647,7 @@
                 const phone = document.getElementById('formPhone').value.trim();
                 const city = document.getElementById('formCity').value.trim();
                 const email = document.getElementById('formEmail').value.trim();
+                const service = document.getElementById('formService').value;
                 const message = document.getElementById('formMessage').value.trim();
 
                 if (!name) {
@@ -527,6 +660,10 @@
                 }
                 if (!city) {
                     showError('אנא הזן עיר / יישוב.');
+                    return;
+                }
+                if (!service) {
+                    showError('אנא בחר את סוג השירות.');
                     return;
                 }
                 if (!message) {
@@ -547,9 +684,8 @@
                     subject: 'פנייה חדשה מהאתר - תותבות עד הבית',
                     name: name,
                     phone: phone,
-                    city: city,
-                    email: email,
-                    message: message
+                    replyTo: email ? email : undefined,
+                    message: `עיר: ${city}\nאימייל: ${email || 'לא הוזן'}\nסוג שירות מבוקש: ${service}\n--------------------\nהודעה מהלקוח:\n${message}`
                 };
 
                 try {
@@ -573,6 +709,7 @@
                         document.getElementById('formPhone').value = '';
                         document.getElementById('formCity').value = '';
                         document.getElementById('formEmail').value = '';
+                        document.getElementById('formService').value = '';
                         document.getElementById('formMessage').value = '';
                     } else {
                         showError('אירעה שגיאה בשליחת ההודעה. אנא נסה שוב.');
