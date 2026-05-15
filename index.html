@@ -79,6 +79,24 @@
       gtag('config', 'AW-16695210635');
     </script>
 
+    <!-- Event snippet for קליק לשיחה (1) conversion page -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-16695210635/xL_9CP2bz60cEIvl8pg-',
+            'value': 1.0,
+            'currency': 'ILS',
+            'event_callback': callback
+        });
+        return false;
+      }
+    </script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -91,7 +109,7 @@
                     <span class="brand-mark">T</span>
                     <span>Tutavot Ad Habait</span>
                 </div>
-                <a href="tel:0507156888" class="brand-phone">
+                <a href="tel:0507156888" class="brand-phone" onclick="gtag('event', 'click_to_call', {'event_category': 'Contact', 'event_label': 'Nav_Phone'}); return gtag_report_conversion('tel:0507156888');">
                     <i class="fa-solid fa-phone" style="color: var(--gold);"></i>
                     050-7156888
                 </a>
@@ -130,7 +148,7 @@
                 <div class="hero-phone">
                     לשיחת ייעוץ ראשונית ללא עלות:
                     <br>
-                    <a href="tel:0507156888" class="cta-button">
+                    <a href="tel:0507156888" class="cta-button" onclick="gtag('event', 'click_to_call', {'event_category': 'Contact', 'event_label': 'Hero_Phone'}); return gtag_report_conversion('tel:0507156888');">
                         <i class="fa-solid fa-phone"></i> חייגו עכשיו
                     </a>
                 </div>
@@ -419,7 +437,7 @@
         </section>
 
         <a href="https://wa.me/972507156888?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A0%D7%95%D7%A1%D7%A4%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%AA%D7%95%D7%AA%D7%91%D7%95%D7%AA%20%D7%A2%D7%93%20%D7%94%D7%91%D7%99%D7%AA."
-            class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+            class="whatsapp-float" target="_blank" rel="noopener noreferrer" onclick="if(typeof gtag !== 'undefined') gtag('event', 'whatsapp_click', {'event_category': 'Contact', 'event_label': 'Float_WhatsApp'});">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
 
@@ -611,6 +629,14 @@
                     });
                     const data = await response.json();
                     if (data.success) {
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'form_submission', {'event_category': 'Lead', 'event_label': 'Hero_Form'});
+                            gtag('event', 'conversion', {
+                                'send_to': 'AW-16695210635/dxQxCOaZz60cEIvl8pg-',
+                                'value': 1.0,
+                                'currency': 'ILS'
+                            });
+                        }
                         const successMsg = document.getElementById('heroFormSuccess');
                         btn.style.display = 'none';
                         successMsg.style.display = 'block';
@@ -700,6 +726,14 @@
                     const data = await response.json();
 
                     if (data.success) {
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'form_submission', {'event_category': 'Lead', 'event_label': 'Footer_Form'});
+                            gtag('event', 'conversion', {
+                                'send_to': 'AW-16695210635/dxQxCOaZz60cEIvl8pg-',
+                                'value': 1.0,
+                                'currency': 'ILS'
+                            });
+                        }
                         const successMsg = document.getElementById('formSuccess');
                         btn.style.display = 'none';
                         successMsg.style.display = 'block';

@@ -74,6 +74,24 @@
       gtag('config', 'AW-16695210635');
     </script>
 
+    <!-- Event snippet for קליק לשיחה (1) conversion page -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-16695210635/xL_9CP2bz60cEIvl8pg-',
+            'value': 1.0,
+            'currency': 'ILS',
+            'event_callback': callback
+        });
+        return false;
+      }
+    </script>
+
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -86,7 +104,7 @@
                     <span class="brand-mark">T</span>
                     <span>Tutavot Ad Habait</span>
                 </div>
-                <a href="tel:0507156888" class="brand-phone">
+                <a href="tel:0507156888" class="brand-phone" onclick="gtag('event', 'click_to_call', {'event_category': 'Contact', 'event_label': 'Nav_Phone_EN'}); return gtag_report_conversion('tel:0507156888');">
                     <i class="fa-solid fa-phone" style="color: var(--gold);"></i>
                     050-7156888
                 </a>
@@ -125,7 +143,7 @@
                 <div class="hero-phone">
                     For an initial, no-cost consultation:
                     <br>
-                    <a href="tel:0507156888" class="cta-button">
+                    <a href="tel:0507156888" class="cta-button" onclick="gtag('event', 'click_to_call', {'event_category': 'Contact', 'event_label': 'Hero_Phone_EN'}); return gtag_report_conversion('tel:0507156888');">
                         <i class="fa-solid fa-phone"></i> Call Now
                     </a>
                 </div>
@@ -406,7 +424,7 @@
         </section>
 
         <a href="https://wa.me/972507156888?text=Hello,%20I'd%20like%20to%20get%20more%20details%20about%20at-home%20dentures."
-            class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+            class="whatsapp-float" target="_blank" rel="noopener noreferrer" onclick="if(typeof gtag !== 'undefined') gtag('event', 'whatsapp_click', {'event_category': 'Contact', 'event_label': 'Float_WhatsApp_EN'});">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
 
@@ -598,6 +616,14 @@
                     });
                     const data = await response.json();
                     if (data.success) {
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'form_submission', {'event_category': 'Lead', 'event_label': 'Hero_Form_EN'});
+                            gtag('event', 'conversion', {
+                                'send_to': 'AW-16695210635/dxQxCOaZz60cEIvl8pg-',
+                                'value': 1.0,
+                                'currency': 'ILS'
+                            });
+                        }
                         const successMsg = document.getElementById('heroFormSuccess');
                         btn.style.display = 'none';
                         successMsg.style.display = 'block';
@@ -687,6 +713,14 @@
                     const data = await response.json();
 
                     if (data.success) {
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'form_submission', {'event_category': 'Lead', 'event_label': 'Footer_Form_EN'});
+                            gtag('event', 'conversion', {
+                                'send_to': 'AW-16695210635/dxQxCOaZz60cEIvl8pg-',
+                                'value': 1.0,
+                                'currency': 'ILS'
+                            });
+                        }
                         const successMsg = document.getElementById('formSuccess');
                         btn.style.display = 'none';
                         successMsg.style.display = 'block';
