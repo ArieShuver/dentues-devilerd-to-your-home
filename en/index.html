@@ -448,11 +448,11 @@
             <h2 style="font-size: 2.5rem; color: var(--gold);">To schedule a meeting or ask about the service, leave your details and we'll get back to you soon.
             </h2>
             <div class="form-container" id="contactForm">
-                <input type="text" id="formName" placeholder="Full Name" required>
-                <input type="tel" id="formPhone" placeholder="Phone Number" required>
-                <input type="text" id="formCity" placeholder="City / Town" required>
-                <input type="email" id="formEmail" placeholder="Email Address (optional)">
-                <select id="formService" required style="grid-column: 1 / -1; padding: 15px; border: none; border-radius: 5px; font-family: inherit; font-size: 1.1rem; box-sizing: border-box; width: 100%;">
+                <input type="text" id="formName" placeholder="Full Name" aria-label="Full Name" required>
+                <input type="tel" id="formPhone" placeholder="Phone Number" aria-label="Phone Number" required>
+                <input type="text" id="formCity" placeholder="City / Town" aria-label="City or Town" required>
+                <input type="email" id="formEmail" placeholder="Email Address (optional)" aria-label="Email Address">
+                <select id="formService" aria-label="Which service are you interested in?" required style="grid-column: 1 / -1; padding: 15px; border: none; border-radius: 5px; font-family: inherit; font-size: 1.1rem; box-sizing: border-box; width: 100%;">
                     <option value="" disabled selected>Which service are you interested in?</option>
                     <option value="New Dentures">New Dentures</option>
                     <option value="Repair / Reline">Repair or Reline Existing Dentures</option>

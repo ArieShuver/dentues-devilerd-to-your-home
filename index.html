@@ -12,11 +12,22 @@
     <link rel="canonical" href="https://www.totavotadhabayit.com/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- טעינה מוקדמת של תמונת הרקע לשיפור מהירות הצגת המסך הראשון (LCP) -->
+    <link rel="preload" as="image" href="1778091788711~2.jpg">
+
     <!-- אייקון למנוע החיפוש של גוגל ולסמארטפונים (קובץ התמונה) -->
     <link rel="icon" href="favicon.png" type="image/png" sizes="192x192">
     <link rel="apple-touch-icon" href="favicon.png">
     <!-- אייקון ללשונית הדפדפן - יורנדר בצורה חדה (קוד ה-SVG המקורי) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%2280%22 x=%2250%22 text-anchor=%22middle%22 font-size=%2290%22 font-family=%22serif%22 font-weight=%22bold%22 fill=%22%23d4af37%22>T</text></svg>" type="image/svg+xml">
+
+    <!-- Open Graph Meta Tags (לשיתוף בוואטסאפ ורשתות חברתיות) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.totavotadhabayit.com/">
+    <meta property="og:title" content="שיניים תותבות עד הבית | ד&quot;ר צ. שובר">
+    <meta property="og:description" content="רופא שיניים מומחה לשיקום הפה, מציע שיניים תותבות בהתאמה אישית עד הבית. שיפור מיידי בלעיסה ובמראה.">
+    <meta property="og:image" content="https://www.totavotadhabayit.com/d.r.png">
+    <meta property="og:locale" content="he_IL">
 
     <!-- JSON-LD Structured Data for SEO -->
     <script type="application/ld+json">
@@ -193,10 +204,10 @@
             <div class="hero-form-container">
                 <h3 style="text-align: center;">שיחת ייעוץ ראשונית ובדיקת התאמה – ללא עלות וללא התחייבות!</h3>
                 <div class="hero-form-grid">
-                    <input type="text" id="heroFormName" placeholder="שם מלא" required>
-                    <input type="tel" id="heroFormPhone" placeholder="מספר טלפון" required dir="rtl" style="text-align: right;">
-                    <input type="text" id="heroFormCity" placeholder="עיר מגורים / אזור" required>
-                    <select id="heroFormService" required>
+                    <input type="text" id="heroFormName" placeholder="שם מלא" aria-label="שם מלא" required>
+                    <input type="tel" id="heroFormPhone" placeholder="מספר טלפון" aria-label="מספר טלפון" required dir="rtl" style="text-align: right;">
+                    <input type="text" id="heroFormCity" placeholder="עיר מגורים / אזור" aria-label="עיר מגורים או אזור" required>
+                    <select id="heroFormService" aria-label="סוג הטיפול הנדרש" required>
                         <option value="" disabled selected>סוג הטיפול הנדרש?</option>
                         <option value="תותבות חדשות">תותבות חדשות</option>
                         <option value="תיקון/ריפוד תותבת קיימת">תיקון או ריפוד תותבת</option>
@@ -457,11 +468,11 @@
                 בהקדם.
             </h2>
             <div class="form-container" id="contactForm">
-                <input type="text" id="formName" placeholder="שם מלא" required>
-                <input type="tel" id="formPhone" placeholder="מספר טלפון" required dir="rtl" style="text-align: right;">
-                <input type="text" id="formCity" placeholder="עיר / יישוב" required>
-                <input type="email" id="formEmail" placeholder="כתובת אימייל (אופציונלי)">
-                <select id="formService" required style="grid-column: 1 / -1; padding: 15px; border: none; border-radius: 5px; font-family: inherit; font-size: 1.1rem; box-sizing: border-box; width: 100%;">
+                <input type="text" id="formName" placeholder="שם מלא" aria-label="שם מלא" required>
+                <input type="tel" id="formPhone" placeholder="מספר טלפון" aria-label="מספר טלפון" required dir="rtl" style="text-align: right;">
+                <input type="text" id="formCity" placeholder="עיר / יישוב" aria-label="עיר או יישוב" required>
+                <input type="email" id="formEmail" placeholder="כתובת אימייל (אופציונלי)" aria-label="כתובת אימייל">
+                <select id="formService" aria-label="איזה שירות מעניין אותך" required style="grid-column: 1 / -1; padding: 15px; border: none; border-radius: 5px; font-family: inherit; font-size: 1.1rem; box-sizing: border-box; width: 100%;">
                     <option value="" disabled selected>איזה שירות מעניין אותך?</option>
                     <option value="תותבות חדשות">תותבות חדשות</option>
                     <option value="תיקון/ריפוד תותבת">תיקון או ריפוד תותבת קיימת</option>
