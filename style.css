@@ -1260,6 +1260,15 @@ body.readable-font {
     color: inherit;
 }
 
+.article-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    background-color: #e9ecef;
+    aspect-ratio: 3 / 2; /* המשפט הזה מונע קפיצות מסך בנייד ומביא 100% ב-CLS */
+}
+
 .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
