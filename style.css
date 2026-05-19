@@ -57,7 +57,8 @@ html[dir="ltr"] .testimonial-card {
     border-right: none;
     border-left: 6px solid var(--gold);
 }
-html[dir="ltr"] .step-arrow i {
+html[dir="ltr"] .step-arrow i,
+html[dir="ltr"] .step-arrow svg {
     transform: scaleX(-1);
 }
 html[dir="ltr"] .form-container input,
@@ -244,7 +245,7 @@ html[dir="ltr"] .whatsapp-float {
     width: 100%;
     display: block;
     z-index: 2;
-    background: url('1778091788711~2.jpg') center center / cover no-repeat;
+    background: #e9ecef url('1778091788711~2.jpg') center center / cover no-repeat;
 }
 
 .hero h1 {
@@ -279,8 +280,10 @@ html[dir="ltr"] .whatsapp-float {
     align-items: center;
     gap: 12px;
 }
-.hero-bullets i {
+.hero-bullets i,
+.hero-bullets svg {
     color: var(--gold);
+    fill: var(--gold);
     font-size: 1.1rem;
 }
 
@@ -365,9 +368,12 @@ html[dir="ltr"] .whatsapp-float {
     color: #333;
 }
 
-.feature-icon i {
+.feature-icon i,
+.feature-icon svg {
     color: #444;
+    fill: currentColor;
     text-shadow: 2px 2px 0px #e2c98d;
+    filter: drop-shadow(2px 2px 0px #e2c98d);
 }
 
 .feature-box h3 {
@@ -804,11 +810,20 @@ html[dir="ltr"] .whatsapp-float {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     text-decoration: none;
     z-index: 1000;
-    animation: whatsapp-pulse 2s infinite;
     transition: all 0.4s ease;
     opacity: 0;
     visibility: hidden;
     transform: scale(0.5);
+}
+
+.whatsapp-float::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 50%;
+    border: 2px solid #25d366;
+    animation: whatsapp-pulse 2s infinite;
+    pointer-events: none;
 }
 
 .whatsapp-float:hover,
@@ -824,9 +839,8 @@ html[dir="ltr"] .whatsapp-float {
 }
 
 @keyframes whatsapp-pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.5); opacity: 0; }
 }
 
 .specialist-intro {
@@ -929,6 +943,7 @@ body.readable-font {
     border: 5px solid var(--gold);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     margin-top: 10px;
+    background-color: #e9ecef;
 }
 
 .specialist-text { flex: 1; }
@@ -1023,8 +1038,10 @@ body.readable-font {
     color: var(--navy);
 }
 
-.specialist-benefits i {
+.specialist-benefits i,
+.specialist-benefits svg {
     color: var(--gold);
+    fill: var(--gold);
     font-size: 1.2rem;
     background: white;
     width: 35px;
@@ -1035,6 +1052,8 @@ body.readable-font {
     border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     flex-shrink: 0;
+    padding: 8px; /* Adjustment for SVG inside flex */
+    box-sizing: border-box;
 }
 
 /* FAQ Section */
@@ -1066,16 +1085,15 @@ body.readable-font {
 }
 
 .faq-question::after {
-    content: '\f067';
-    font-family: 'Font Awesome 6 Free';
+    content: '+';
     font-weight: 900;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: var(--gold);
     transition: transform 0.3s;
 }
 
 .faq-item.active .faq-question::after {
-    content: '\f068';
+    content: '−';
 }
 
 .faq-answer {
@@ -1101,4 +1119,176 @@ body.readable-font {
     .specialist-step p {
         padding-right: 0;
     }
+}
+
+/* Article Page Styles */
+.article-page-main {
+    padding: 60px 10%;
+    background-color: var(--white);
+}
+
+.article-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: right;
+    line-height: 1.7;
+}
+
+.article-content h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 20px;
+}
+
+.article-main-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: block;
+    background-color: #e9ecef;
+}
+
+.article-tldr {
+    background-color: #f0f7ff;
+    border-right: 4px solid var(--navy);
+    padding: 20px 25px;
+    margin-bottom: 35px;
+    border-radius: 8px 0 0 8px;
+}
+.article-tldr h3 {
+    margin-top: 0;
+    color: var(--navy);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+.article-tldr ul { margin: 0; padding-right: 20px; }
+.article-tldr li { margin-bottom: 8px; color: var(--text-dark); font-weight: 600; }
+
+.article-content h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 5px;
+}
+
+.article-content p {
+    font-size: 1.15rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.article-cta {
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    text-align: center;
+    border-top: 4px solid var(--gold);
+}
+
+.article-cta h3 {
+    font-size: 1.5rem;
+    color: var(--navy);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.article-cta p {
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+/* Responsive for article */
+@media (max-width: 768px) {
+    .article-page-main {
+        padding: 40px 5%;
+    }
+    .article-content h1 {
+        font-size: 2rem;
+    }
+    .article-content h2 {
+        font-size: 1.5rem;
+    }
+    .article-main-image {
+        height: 220px;
+    }
+}
+
+/* Articles Hub Page Styles */
+.articles-page-main {
+    padding: 60px 10%;
+    background-color: var(--gray-bg);
+    min-height: 70vh;
+}
+
+.articles-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.articles-header h1 {
+    font-size: 2.8rem;
+    color: var(--navy);
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.article-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none; /* Make entire card clickable */
+    color: inherit;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.article-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    background-color: #e9ecef;
+}
+
+.article-card-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.article-card h3 {
+    font-size: 1.4rem;
+    color: var(--navy);
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+}
+
+.article-card p {
+    color: var(--text-light);
+    margin: 0;
+    font-size: 1.05rem;
 }
