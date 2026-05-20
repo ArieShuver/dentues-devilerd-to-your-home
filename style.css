@@ -245,7 +245,7 @@ html[dir="ltr"] .whatsapp-float {
     width: 100%;
     display: block;
     z-index: 2;
-    background: #e9ecef url('image.webp') center center / cover no-repeat;
+    background: #e9ecef url('hero-patient-smile.webp') center center / cover no-repeat;
 }
 
 .hero h1 {
@@ -713,6 +713,7 @@ html[dir="ltr"] .whatsapp-float {
         width: 100%;
         border-radius: 15px;
         background-size: cover;
+        background-image: url('hero-patient-smile-small.webp');
     }
     .specialist-container {
         flex-direction: column;
@@ -1261,25 +1262,17 @@ body.readable-font {
 }
 
 .article-card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    width: 100%; /* תופס את כל רוחב הכרטיס */
+    height: auto; /* הגובה יקבע אוטומטית לפי יחס הגובה-רוחב */
+    aspect-ratio: 3 / 2; /* שומר על יחס קבוע של 3:2 ומונע קפיצות לחלוטין */
+    object-fit: cover; /* מבטיח שהתמונה תכסה את כל השטח בלי להתעוות */
     display: block;
-    background-color: #e9ecef;
-    aspect-ratio: 3 / 2; /* המשפט הזה מונע קפיצות מסך בנייד ומביא 100% ב-CLS */
+    background-color: #e9ecef; /* צבע רקע בזמן שהתמונה נטענת */
 }
 
 .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.article-card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    background-color: #e9ecef;
 }
 
 .article-card-content {
