@@ -70,11 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', () => {
             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
             const scrolled = (window.scrollY / scrollHeight) * 100;
-            if (scrolled > 20) {
                 whatsappBtn.classList.add('visible');
-            } else {
-                whatsappBtn.classList.remove('visible');
-            }
         });
     }
 
@@ -88,5 +84,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
     document.querySelectorAll('.hero-form-container').forEach(el => scrollObserver.observe(el));
-
 });
