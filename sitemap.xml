@@ -2,62 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.totavotadhabayit.com/</loc>
-    <lastmod>2024-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.totavotadhabayit.com/en/</loc>
-    <lastmod>2024-06-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.totavotadhabayit.com/articles.html</loc>
-    <lastmod>2024-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-dentist-vs-technician.html</loc>
-    <lastmod>2024-06-21</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-at-home-dentist.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.totavotadhabayit.com/article-cleaning-dentures.html</loc>
-    <lastmod>2024-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.totavotadhabayit.com/article-sleeping-with-dentures.html</loc>
-    <lastmod>2024-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.totavotadhabayit.com/article-denture-adhesive.html</loc>
-    <lastmod>2024-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.totavotadhabayit.com/article-eating-with-dentures.html</loc>
-    <lastmod>2024-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.totavotadhabayit.com/article-complete-vs-partial-dentures.html</loc>
-    <lastmod>2024-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.totavotadhabayit.com/article-dentist-vs-technician.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.totavotadhabayit.com/article-denture-adhesive.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.totavotadhabayit.com/article-dentures-cost-and-buying.html</loc>
-    <lastmod>2024-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.totavotadhabayit.com/article-eating-with-dentures.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.totavotadhabayit.com/article-loose-dentures.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.totavotadhabayit.com/article-sleeping-with-dentures.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.totavotadhabayit.com/terms.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.totavotadhabayit.com/en/terms.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
