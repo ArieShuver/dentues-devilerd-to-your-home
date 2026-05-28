@@ -70,7 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', () => {
             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
             const scrolled = (window.scrollY / scrollHeight) * 100;
+            if (scrolled > 20) {
                 whatsappBtn.classList.add('visible');
+            } else {
+                whatsappBtn.classList.remove('visible');
+            }
         });
     }
 
@@ -84,4 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
     document.querySelectorAll('.hero-form-container').forEach(el => scrollObserver.observe(el));
+
 });
+
+// --- Microsoft Clarity Tracking ---
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.defer=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "wqydd744m2");
