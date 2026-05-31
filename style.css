@@ -16,8 +16,9 @@ body {
     color: var(--text-dark);
     background-color: var(--white);
     line-height: 1.65;
-    font-size: 19px;
+    font-size: clamp(16px, 1.2vw, 19px);
     font-weight: 400;
+    overflow-x: hidden;
 }
 
 /* LTR Specific Styles */
@@ -110,10 +111,13 @@ html[dir="ltr"] .whatsapp-float {
     left: 0;
     right: 0;
     z-index: 1000;
+    height: 100px;
+    box-sizing: border-box;
 }
 
 .top-nav-inner {
-    padding: 16px 10%;
+    padding: 0 10%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -249,7 +253,7 @@ html[dir="ltr"] .whatsapp-float {
 }
 
 .hero h1 {
-    font-size: 3.8rem;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
     font-weight: 800;
     margin: 0 0 25px 0;
     line-height: 1.05;
@@ -257,7 +261,7 @@ html[dir="ltr"] .whatsapp-float {
 }
 
 .hero p {
-    font-size: 1.6rem;
+    font-size: clamp(1.15rem, 2vw, 1.6rem);
     font-weight: 400;
     margin-bottom: 45px;
     max-width: 650px;
@@ -271,7 +275,7 @@ html[dir="ltr"] .whatsapp-float {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px 25px;
-    font-size: 1.25rem;
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
     font-weight: 600;
     width: fit-content;
 }
@@ -314,12 +318,12 @@ html[dir="ltr"] .whatsapp-float {
 
 /* Features Section */
 .section {
-    padding: 80px 10%;
+    padding: clamp(50px, 8vw, 80px) 5%;
     text-align: center;
 }
 
 .section-title {
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 800;
     margin-bottom: 60px;
     position: relative;
@@ -363,7 +367,7 @@ html[dir="ltr"] .whatsapp-float {
 }
 
 .feature-icon {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
     margin-bottom: 20px;
     color: #333;
 }
@@ -393,7 +397,7 @@ html[dir="ltr"] .whatsapp-float {
 /* Steps Section */
 .steps-section {
     background-color: var(--white);
-    padding: 80px 10%;
+    padding: clamp(50px, 8vw, 80px) 5%;
     text-align: center;
 }
 
@@ -401,7 +405,7 @@ html[dir="ltr"] .whatsapp-float {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: clamp(10px, 1.5vw, 20px);
     margin-top: 60px;
     flex-wrap: nowrap;
     padding: 20px 0;
@@ -416,8 +420,8 @@ html[dir="ltr"] .whatsapp-float {
 }
 
 .step-item {
-    width: 220px;
-    height: 220px;
+    width: clamp(110px, 14vw, 220px);
+    height: clamp(110px, 14vw, 220px);
     background: white;
     border-radius: 50%;
     border: 6px solid var(--navy);
@@ -427,7 +431,7 @@ html[dir="ltr"] .whatsapp-float {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
+    padding: clamp(10px, 1.5vw, 20px);
     position: relative;
     z-index: 2;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -458,14 +462,14 @@ html[dir="ltr"] .whatsapp-float {
 }
 
 .step-item .feature-icon {
-    font-size: 2.2rem;
+    font-size: clamp(1.5rem, 2vw, 2.2rem);
     margin-bottom: 8px;
     color: #444;
     text-shadow: 1.5px 1.5px 0px #e2c98d;
 }
 
 .step-item h3 {
-    font-size: 1.15rem;
+    font-size: clamp(0.85rem, 1.1vw, 1.15rem);
     font-weight: 800;
     color: var(--navy);
     margin: 0 0 5px 0;
@@ -473,7 +477,7 @@ html[dir="ltr"] .whatsapp-float {
 }
 
 .step-item p {
-    font-size: 1.05rem;
+    font-size: clamp(0.75rem, 1vw, 1.05rem);
     color: #666;
     margin: 0;
     line-height: 1.3;
@@ -484,7 +488,7 @@ html[dir="ltr"] .whatsapp-float {
     font-size: 1.5rem;
     font-weight: bold;
     z-index: 1;
-    margin: 0 10px;
+    margin: 0 clamp(4px, 1vw, 10px);
     transition: transform 0.3s;
     flex-shrink: 0;
 }
@@ -549,7 +553,7 @@ html[dir="ltr"] .whatsapp-float {
 .footer-cta {
     background-color: var(--navy);
     color: white;
-    padding: 80px 10%;
+    padding: clamp(50px, 8vw, 80px) 5%;
     text-align: center;
 }
 
@@ -596,6 +600,10 @@ html[dir="ltr"] .whatsapp-float {
     margin-top: 10px;
     box-sizing: border-box;
     width: 100%;
+}
+
+.footer-cta h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem) !important;
 }
 
 /* Quick Contact Strip (Below Hero) */
@@ -666,8 +674,6 @@ html[dir="ltr"] .whatsapp-float {
 /* Responsive */
 @media (max-width: 991px) {
     body { padding-top: 60px; }
-    .quick-contact-strip { padding: 40px 5%; }
-    .section { padding: 50px 5%; }
     .top-nav-inner {
         padding: 10px 5%;
         flex-direction: row;
@@ -696,7 +702,7 @@ html[dir="ltr"] .whatsapp-float {
     }
     .hero {
         grid-template-columns: 1fr;
-        padding: 60px 5%;
+        padding: clamp(40px, 6vw, 60px) 5%;
         text-align: center;
         min-height: auto;
         display: flex;
@@ -706,10 +712,10 @@ html[dir="ltr"] .whatsapp-float {
     html[dir="ltr"] .hero::before {
         display: none;
     }
-    .hero-content { padding: 40px 0; }
-    .hero h1 { font-size: 2.4rem; }
+    .hero-content { padding: 40px 0 0 0; }
+    .hero h1 { line-height: 1.15; margin-top: 10px; }
     .hero-media {
-        height: 250px;
+        height: clamp(250px, 35vw, 320px);
         width: 100%;
         border-radius: 15px;
         background-size: cover;
@@ -723,8 +729,8 @@ html[dir="ltr"] .whatsapp-float {
         align-self: center;
     }
     .specialist-image img {
-        width: 160px;
-        height: 160px;
+        width: clamp(140px, 40vw, 280px);
+        height: clamp(140px, 40vw, 280px);
     }
     .specialist-step h3 {
         flex-direction: column;
@@ -753,8 +759,8 @@ html[dir="ltr"] .whatsapp-float {
     }
     .step-arrow { display: none; }
     .step-item {
-        width: 180px;
-        height: 180px;
+        width: clamp(140px, 40vw, 180px);
+        height: clamp(140px, 40vw, 180px);
     }
     .testimonial-card { padding: 20px; }
     .features-container { grid-template-columns: 1fr; }
@@ -777,12 +783,8 @@ html[dir="ltr"] .whatsapp-float {
         margin-right: 0;
         font-size: 0.85rem;
     }
-    .hero h1 {
-        font-size: 2rem;
-        line-height: 1.2;
-    }
-    .hero p { font-size: 1.2rem; margin-bottom: 25px; }
-    .hero-bullets { margin: 0 15% 30px 0; grid-template-columns: 1fr; text-align: right; gap: 10px; font-size: 1.15rem; }
+    .hero p { margin-bottom: 25px; }
+    .hero-bullets { margin: 0 15% 30px 0; grid-template-columns: 1fr; text-align: right; gap: 10px; }
     .lang-switcher {
         justify-content: center;
         margin-top: 10px;
@@ -846,7 +848,7 @@ html[dir="ltr"] .whatsapp-float {
 
 .specialist-intro {
     background: var(--white);
-    padding: 60px 10%;
+    padding: clamp(40px, 6vw, 60px) 5%;
     text-align: right;
     border-bottom: 1px solid #eee;
 }
@@ -931,14 +933,14 @@ body.readable-font {
     margin: 0 auto;
     display: flex;
     align-items: flex-start;
-    gap: 50px;
+    gap: clamp(20px, 4vw, 50px);
 }
 
 .specialist-image { flex-shrink: 0; }
 
 .specialist-image img {
-    width: 280px;
-    height: 280px;
+    width: clamp(180px, 25vw, 280px);
+    height: clamp(180px, 25vw, 280px);
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid var(--gold);
@@ -953,7 +955,7 @@ body.readable-font {
 
 .specialist-text h2 {
     color: var(--navy);
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
     margin-top: 0;
     margin-bottom: 20px;
     line-height: 1.2;
@@ -1124,7 +1126,7 @@ body.readable-font {
 
 /* Article Page Styles */
 .article-page-main {
-    padding: 60px 10%;
+    padding: clamp(40px, 6vw, 60px) 5%;
     background-color: var(--white);
 }
 
@@ -1136,7 +1138,7 @@ body.readable-font {
 }
 
 .article-content h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
     font-weight: 800;
     color: var(--navy);
     margin-bottom: 20px;
@@ -1170,7 +1172,7 @@ body.readable-font {
 .article-tldr li { margin-bottom: 8px; color: var(--text-dark); font-weight: 600; }
 
 .article-content h2 {
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
     font-weight: 700;
     color: var(--navy);
     margin-top: 40px;
@@ -1208,15 +1210,6 @@ body.readable-font {
 
 /* Responsive for article */
 @media (max-width: 768px) {
-    .article-page-main {
-        padding: 40px 5%;
-    }
-    .article-content h1 {
-        font-size: 2rem;
-    }
-    .article-content h2 {
-        font-size: 1.5rem;
-    }
     .article-main-image {
         height: 220px;
     }
@@ -1224,7 +1217,7 @@ body.readable-font {
 
 /* Articles Hub Page Styles */
 .articles-page-main {
-    padding: 60px 10%;
+    padding: clamp(40px, 6vw, 60px) 5%;
     background-color: var(--gray-bg);
     min-height: 70vh;
 }
@@ -1235,7 +1228,7 @@ body.readable-font {
 }
 
 .articles-header h1 {
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 4vw, 2.8rem);
     color: var(--navy);
     margin-bottom: 15px;
     font-weight: 800;
