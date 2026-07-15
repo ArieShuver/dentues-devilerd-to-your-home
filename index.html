@@ -759,6 +759,29 @@
         </script>
     </main>
 
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent-banner" id="cookie-banner">
+        <p>אנו משתמשים בקובצי Cookie כדי לשפר את חווית הגלישה שלך. על ידי המשך השימוש באתר, אתה מסכים לשימוש שלנו בקובצי Cookie.</p>
+        <button class="cookie-consent-button" id="accept-cookies-btn">הבנתי, תודה!</button>
+    </div>
+
+    <!-- Script for Cookie Banner -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptButton = document.getElementById('accept-cookies-btn');
+
+            if (!localStorage.getItem('cookies_accepted')) {
+                setTimeout(() => { cookieBanner.classList.add('show'); }, 1500);
+            }
+
+            acceptButton.addEventListener('click', function() {
+                cookieBanner.classList.remove('show');
+                localStorage.setItem('cookies_accepted', 'true');
+            });
+        });
+    </script>
+
 </body>
 
 </html>
