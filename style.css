@@ -558,6 +558,8 @@ html[dir="ltr"] .whatsapp-float {
 }
 
 .form-container {
+    box-sizing: border-box;
+    width: 100%;
     max-width: 800px;
     margin: 40px auto 0;
     background: var(--gold);
@@ -568,7 +570,12 @@ html[dir="ltr"] .whatsapp-float {
     gap: 15px;
 }
 
-.form-container input {
+.form-container input,
+.form-container select,
+.form-container textarea {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
     padding: 15px;
     border: none;
     border-radius: 5px;
@@ -577,6 +584,8 @@ html[dir="ltr"] .whatsapp-float {
 }
 
 .form-submit {
+    box-sizing: border-box;
+    width: 100%;
     grid-column: span 2;
     background: var(--navy);
     color: white;
@@ -616,6 +625,8 @@ html[dir="ltr"] .whatsapp-float {
 
 /* Hero Form (Top Form) */
 .hero-form-container {
+    box-sizing: border-box;
+    width: 100%;
     background: var(--white);
     padding: 35px;
     border-radius: 12px;
@@ -645,6 +656,9 @@ html[dir="ltr"] .whatsapp-float {
 }
 .hero-form-grid input,
 .hero-form-grid select {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
     padding: 12px 15px;
     border-radius: 6px;
     border: 1px solid #ddd;
@@ -654,6 +668,8 @@ html[dir="ltr"] .whatsapp-float {
     color: var(--navy);
 }
 .hero-form-submit {
+    box-sizing: border-box;
+    width: 100%;
     grid-column: span 2;
     background: var(--gold);
     color: var(--navy);
@@ -751,7 +767,7 @@ html[dir="ltr"] .whatsapp-float {
         padding: 20px;
     }
     .hero-form-grid { grid-template-columns: 1fr; }
-    .hero-form-submit { grid-column: span 1; }
+    .hero-form-grid > * { grid-column: 1 / -1 !important; }
         .form-container textarea { grid-column: span 1 !important; }
     .steps-container {
         flex-direction: column;
