@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="he" dir="rtl">
 
 <head>
@@ -65,8 +65,23 @@
     </main>
 
     <footer style="background:#050c18; color:#777; padding:20px; text-align:center; position: fixed; bottom: 0; width: 100%;">
-        <p>© 2026 תותבות עד הבית | שיקום שיניים מקצועי בבית הלקוח | <a href="terms.html" style="color: inherit; text-decoration: underline;">תנאי שימוש</a></p>
+        <p>© 2026 תותבות עד הבית | שיקום שיניים מקצועי בבית הלקוח | <a href="terms.html" style="color: inherit; text-decoration: underline;">תנאי שימוש</a> | <a href="accessibility-statement.html" style="color: inherit; text-decoration: underline;">הצהרת נגישות</a></p>
         <p style="margin: 10px 0 0 0; font-size: 0.9rem; color: #555;">פותח ע"י AS פיתוח וקידום אתרים</p>
     </footer>
+
+    <!-- UserWay Accessibility Widget (Lazy Loaded) -->
+    <script>
+        function loadUserWayWidget() {
+            const userwayScript = document.createElement("script");
+            userwayScript.setAttribute("data-account", "1iQ9X3s5sC");
+            userwayScript.setAttribute("data-position", "5");
+            userwayScript.setAttribute("data-color", "#777777"); // A more subtle gray
+            userwayScript.setAttribute("src", "https://cdn.userway.org/widget.js");
+            document.body.appendChild(userwayScript);
+        }
+        window.addEventListener('scroll', loadUserWayWidget, { once: true });
+        window.addEventListener('mousemove', loadUserWayWidget, { once: true });
+        window.addEventListener('touchstart', loadUserWayWidget, { once: true });
+    </script>
 </body>
 </html>

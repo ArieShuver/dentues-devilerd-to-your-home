@@ -1,35 +1,3 @@
-// --- תפריט נגישות ---
-let currentFontSize = 19;
-
-window.toggleAccessMenu = function() {
-    const menu = document.getElementById('accessMenu');
-    if (menu) menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-};
-
-window.changeFontSize = function(delta) {
-    currentFontSize *= delta;
-    document.body.style.fontSize = currentFontSize + 'px';
-    const articleContent = document.querySelector('.article-content');
-    if (articleContent) articleContent.style.fontSize = currentFontSize + 'px';
-};
-
-window.toggleContrast = function() {
-    document.body.classList.toggle('high-contrast');
-};
-
-window.toggleReadableFont = function() {
-    document.body.classList.toggle('readable-font');
-};
-
-window.resetAccess = function() {
-    document.body.style.fontSize = '';
-    const articleContent = document.querySelector('.article-content');
-    if (articleContent) articleContent.style.fontSize = '';
-    document.body.classList.remove('high-contrast', 'readable-font');
-    const menu = document.getElementById('accessMenu');
-    if (menu) menu.style.display = 'none';
-};
-
 // --- פעולות בעת טעינת העמוד ---
 document.addEventListener('DOMContentLoaded', () => {
     
