@@ -1,7 +1,5 @@
-// --- פעולות בעת טעינת העמוד ---
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. תפריט מובייל (Hamburger)
     const hamburger = document.getElementById('hamburgerMenu');
     const navLinks = document.querySelector('.nav-links');
     if (hamburger && navLinks) {
@@ -25,14 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. שאלות ותשובות (FAQ Accordion)
     document.querySelectorAll('.faq-question').forEach(question => {
         question.addEventListener('click', () => {
             question.parentElement.classList.toggle('active');
         });
     });
 
-    // 3. כפתור וואטסאפ צף - הופעה בגלילה
     const whatsappBtn = document.querySelector('.whatsapp-float');
     if (whatsappBtn) {
         window.addEventListener('scroll', () => {
@@ -46,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. אנימציות הופעה בגלילה למסכים השונים
     const observerOptions = { threshold: 0.15 };
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -59,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// --- Microsoft Clarity Tracking ---
 (function(c,l,a,r,i,t,y){
     c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
     t=l.createElement(r);t.async=1;t.defer=1;t.src="https://www.clarity.ms/tag/"+i;
