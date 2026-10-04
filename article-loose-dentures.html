@@ -64,6 +64,29 @@
     
     <script defer src="main.js"></script>
     <link rel="stylesheet" href="style.css">
+
+<!-- Google tag (gtag.js) Optimized -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KH16SJSBY8');
+
+  let gaLoaded = false;
+  function loadGA() {
+    if (gaLoaded) return;
+    gaLoaded = true;
+    const script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-KH16SJSBY8';
+    script.async = true;
+    document.head.appendChild(script);
+  }
+  
+  ['scroll', 'mousemove', 'touchstart', 'click'].forEach(function(event) {
+    window.addEventListener(event, loadGA, { once: true, passive: true });
+  });
+  setTimeout(loadGA, 5000);
+</script>
 </head>
 
 <body>
