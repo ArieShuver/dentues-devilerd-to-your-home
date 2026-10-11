@@ -52,6 +52,29 @@
             opacity: 0.9;
         }
     </style>
+
+<!-- Google tag (gtag.js) Optimized -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KH16SJSBY8');
+
+  let gaLoaded = false;
+  function loadGA() {
+    if (gaLoaded) return;
+    gaLoaded = true;
+    const script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-KH16SJSBY8';
+    script.async = true;
+    document.head.appendChild(script);
+  }
+  
+  ['scroll', 'mousemove', 'touchstart', 'click'].forEach(function(event) {
+    window.addEventListener(event, loadGA, { once: true, passive: true });
+  });
+  setTimeout(loadGA, 5000);
+</script>
 </head>
 
 <body>
@@ -70,7 +93,7 @@
         <p style="margin: 15px auto 0 auto; font-size: 0.8rem; color: #888; max-width: 800px; line-height: 1.4;">* המידע המוצג באתר ו/או במאמרים הינו בגדר מידע כללי בלבד ואינו מהווה ייעוץ רפואי, חוות דעת מקצועית או תחליף לבדיקה קלינית ע"י רופא שיניים מוסמך. מחירי הטיפולים עשויים להשתנות בהתאם למורכבות המקרה. כל החלטה רפואית המבוססת על הכתוב באתר הינה באחריות הקורא בלבד.</p>
     </footer>
 
-    <!-- UserWay Accessibility Widget (Lazy Loaded) -->
+    
     <script>
         function loadUserWayWidget() {
             const userwayScript = document.createElement("script");
