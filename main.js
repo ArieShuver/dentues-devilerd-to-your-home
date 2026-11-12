@@ -1,3 +1,71 @@
+// ==========================================================================
+// Conversion Tracking (Google Ads & GA4)
+// ==========================================================================
+let lastPhoneConversionTime = 0;
+let lastWAConversionTime = 0;
+
+function reportPhoneConversion(label) {
+    const now = Date.now();
+    if (now - lastPhoneConversionTime < 1000) return true;
+    lastPhoneConversionTime = now;
+
+    if (typeof gtag === 'function') {
+        gtag('event', 'click_to_call', {
+            event_category: 'Contact',
+            event_label: label || 'Phone_Click'
+        });
+        gtag('event', 'conversion', {
+            send_to: 'AW-16695210635/xL_9CP2bz60cEIvl8pg-',
+            value: 1.0,
+            currency: 'ILS'
+        });
+    }
+    return true;
+}
+
+function reportWhatsAppConversion(label) {
+    const now = Date.now();
+    if (now - lastWAConversionTime < 1000) return true;
+    lastWAConversionTime = now;
+
+    if (typeof gtag === 'function') {
+        gtag('event', 'whatsapp_click', {
+            event_category: 'Contact',
+            event_label: label || 'WhatsApp_Click'
+        });
+        gtag('event', 'conversion', {
+            send_to: 'AW-16695210635/H3iuCJaB0_kcEIvl8pg-',
+            value: 1.0,
+            currency: 'ILS'
+        });
+    }
+    return true;
+}
+
+// Global functions for backward compatibility with onclick attributes in HTML
+window.gtag_report_conversion = function (url) {
+    reportPhoneConversion('Phone_Onclick');
+    return true;
+};
+
+window.gtag_report_conversion_whatsapp = function (url) {
+    reportWhatsAppConversion('WhatsApp_Onclick');
+    return true;
+};
+
+// Delegated click listener to automatically track any phone or WhatsApp links across the entire site
+document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+
+    const href = link.getAttribute('href') || '';
+    if (href.startsWith('tel:')) {
+        reportPhoneConversion(link.className || 'Phone_Link');
+    } else if (href.includes('wa.me') || href.includes('whatsapp.com')) {
+        reportWhatsAppConversion(link.className || 'WhatsApp_Link');
+    }
+}, { capture: true });
+
 document.addEventListener('DOMContentLoaded', () => {
     
     const hamburger = document.getElementById('hamburgerMenu');
