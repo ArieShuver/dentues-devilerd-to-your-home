@@ -3,225 +3,225 @@
   <!-- Core Home & Hub Pages -->
   <url>
     <loc>https://www.totavotadhabayit.com/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.totavotadhabayit.com/en/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/articles.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/articles</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Core Target Keyword Pages (Rank #1 Focus) -->
   <url>
-    <loc>https://www.totavotadhabayit.com/article-dentures-guide.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-dentures-guide</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-dentures-price.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-dentures-price</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-removable-dentures-cost.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-removable-dentures-cost</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-dentures-cost-and-buying.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-dentures-cost-and-buying</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-denture-repairs.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-denture-repairs</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-denture-repair-cost.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-denture-repair-cost</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-technician-repair.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-technician-repair</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-dental-technician.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-dental-technician</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-dentures-petah-tikva.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-dentures-petah-tikva</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Clinical & Specialty Denture Articles -->
   <url>
-    <loc>https://www.totavotadhabayit.com/article-implant-supported-dentures.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-implant-supported-dentures</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-silicone-dentures.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-silicone-dentures</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-loose-dentures.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-loose-dentures</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-at-home-dentist.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-at-home-dentist</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-denture-dentist.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-denture-dentist</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-geriatric-dentist.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-geriatric-dentist</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-complete-vs-partial-dentures.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-complete-vs-partial-dentures</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-dentist-vs-technician.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-dentist-vs-technician</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-technician-at-home.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-technician-at-home</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-denture-sores.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-denture-sores</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-denture-adhesive.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-denture-adhesive</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-eating-with-dentures.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-eating-with-dentures</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-sleeping-with-dentures.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-sleeping-with-dentures</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-cleaning-dentures.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-cleaning-dentures</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-seniors-financial-rights.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-seniors-financial-rights</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Regional City Pages -->
   <url>
-    <loc>https://www.totavotadhabayit.com/article-dentures-jerusalem.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-dentures-jerusalem</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-dentures-tel-aviv.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-dentures-tel-aviv</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-dentures-ramat-gan.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-dentures-ramat-gan</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-dentures-bnei-brak.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-dentures-bnei-brak</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/article-dentures-herzliya.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/article-dentures-herzliya</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <!-- Legal & Accessibility Pages -->
   <url>
-    <loc>https://www.totavotadhabayit.com/terms.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/terms</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/en/terms.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/en/terms</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/accessibility-statement.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/accessibility-statement</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.totavotadhabayit.com/en/accessibility-statement.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.totavotadhabayit.com/en/accessibility-statement</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
